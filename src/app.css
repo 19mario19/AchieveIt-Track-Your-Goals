@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset some default styles */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+input {
+    /* Reset all default styles */
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/* Set default font family and size */
+body {
+    line-height: 1;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+
+textarea,
+input,
+textarea::placeholder,
+input::placeholder,
+button,
+span {
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+/* Remove list styles */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Remove hyperlink styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove text formatting inside some elements */
+blockquote,
+q {
+    quotes: none;
+}
+
+/* Remove borders and spacing for tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove default button styles */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+button,
+li,
+a {
+    cursor: pointer;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 60px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+
+p {
+    line-height: 28px;
+}
+
+
+:root {
+    --primary-color: #1d1f2e;
+    --primary-05-color: #1d1f2e28;
+    --primary-03-color: #1d1f2e21;
+    --primary-01-color: #1d1f2e03;
+    --secondary-color: #60626c;
+    --secondary-05-color: #60626c7b;
+    
+    --light-gray: #fafafa;
+
+    --dark-blue: #050827;
+    --light-gray: #f6f6f6;
+    --gray-color: #80808043;
+
+    --brown-color: #a25f4b;
+    --brown-05-color: #a25f4b73;
+    --brown-03-color: #a25f4b41;
+    --brown-01-color: #a25f4b0e;
+
+    --container-small: 1000px;
+    --container-big: 1260px;
+
+    --a-slow: all 1s ease;
+    --a-medium: all .45s ease;
+    --a-fast: all .18s ease;
+}
+
+
+.container {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    /* border: 1px solid green; */
+}
