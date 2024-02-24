@@ -340,8 +340,8 @@
     padding: 3rem;
     margin-top: 4rem;
 
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
 
 
     justify-content: space-between;
@@ -423,13 +423,20 @@
     border-color: #ff00001e;
   }
 
-  @media screen and (max-width: 717px) {
+  @media screen and (max-width: 1000px) {
     .app {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
     .card {
         width: 100%;
     }
+  }
+  @media screen and (max-width: 717px) {
+    .app {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
   }
 </style>
