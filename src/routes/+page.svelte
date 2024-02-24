@@ -349,9 +349,9 @@
     min-height: 170px;
     gap: 1rem;
     cursor: pointer;
-    border: 1px solid var(--border-shadow);
+    border: 1px solid transparent;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow:
       rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
       rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -367,6 +367,7 @@
     font-size: 23px;
     line-height: 40px;
     text-align: center;
+    border-bottom: 1px solid var(--primary);
   }
 
   .occurrences {
@@ -436,12 +437,12 @@
 
   /* type of card */
   .reduce {
-    background-color: var(--reduce);
+    background: var(--reduce);
     border-color: var(--secondary);
   }
 
   .improve {
-    background-color: var(--improve);
+    background: var(--improve);
     border-color: var(--primary);
   }
 
@@ -459,7 +460,7 @@
     .app {
       grid-template-columns: 1fr;
       gap: 1.4rem;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
     }
   }
 </style>
