@@ -306,7 +306,7 @@
           <div class="occurrences">
             {#if event.occurrence}
               <div class="occurrences-list">
-                {#each event.occurrence.slice(-4) as item}
+                {#each event.occurrence.slice(-5) as item}
                   {#if item.status === Status.Win}
                     <div class="win"></div>
                   {:else}
@@ -458,7 +458,8 @@
   @media screen and (max-width: 717px) {
     .app {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.4rem;
+      padding: .5rem 1rem;
     }
   }
 </style>
