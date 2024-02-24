@@ -176,32 +176,29 @@ p {
 
 
 :root {
-    --primary-color: #1d1f2e;
-    --primary-05-color: #1d1f2e28;
-    --primary-03-color: #1d1f2e21;
-    --primary-01-color: #1d1f2e03;
-    --secondary-color: #60626c;
-    --secondary-05-color: #60626c7b;
-    
-    --light-gray: #fafafa;
-
-    --dark-blue: #050827;
-    --light-gray: #f6f6f6;
-    --gray-color: #80808043;
-
-    --brown-color: #a25f4b;
-    --brown-05-color: #a25f4b73;
-    --brown-03-color: #a25f4b41;
-    --brown-01-color: #a25f4b0e;
-
-    --container-small: 1000px;
-    --container-big: 1260px;
-
-    --a-slow: all 1s ease;
-    --a-medium: all .45s ease;
-    --a-fast: all .18s ease;
+    --primary: #007bff;
+    /* Primary color */
+    --secondary: #6c757d;
+    /* Secondary color */
+    --accent: #28a745;
+    /* Accent color */
+    --danger: #dc3545;
+    /* Danger color */
+    --warning: #ffc107;
+    /* Warning color */
+    --info: #17a2b8;
+    /* Info color */
+    --light: #f8f9fa;
+    /* Light color */
+    --dark: #343a40;
+    /* Dark color */
+    --reduce: rgba(255, 0, 0, 0.12);
+    /* Transparent red */
+    --improve: rgba(82, 187, 231, 0.03);
+    /* Transparent blue */
+    --border-shadow: rgba(9, 30, 66, 0.1);
+    /* Border shadow color */
 }
-
 
 .container {
     max-width: 1260px;

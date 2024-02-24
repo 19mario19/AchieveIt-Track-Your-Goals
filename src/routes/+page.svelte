@@ -339,29 +339,22 @@
     gap: 3rem;
     padding: 3rem;
     margin-top: 4rem;
-
-    /* display: flex;
-    flex-wrap: wrap; */
-
-
     justify-content: space-between;
   }
 
   .card {
-
-
-
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 170px;
     gap: 1rem;
     cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-shadow);
     padding: 1rem;
     border-radius: 10px;
     box-shadow:
       rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
       rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-
     border: 2px solid transparent;
   }
 
@@ -385,6 +378,7 @@
   .occurrences-list {
     display: flex;
     gap: 1rem;
+    align-items: center;
   }
 
   .win,
@@ -395,11 +389,39 @@
   }
 
   .win {
-    background-color: green;
+    background-color: var(--primary);
   }
 
   .lose {
-    background-color: red;
+    background-color: var(--danger);
+  }
+
+  .win:first-child,
+  .lose:first-child {
+    height: 6px;
+    border: 1px solid white;
+  }
+
+  .win:first-child {
+    outline: 2px solid var(--primary);
+  }
+
+  .lose:first-child {
+    outline: 2px solid var(--danger);
+  }
+
+  .win:last-child,
+  .lose:last-child {
+    height: 15px;
+    border: 1px solid white;
+  }
+
+  .win:last-child {
+    outline: 2px solid var(--primary);
+  }
+
+  .lose:last-child {
+    outline: 2px solid var(--danger);
   }
 
   .bottom {
@@ -414,13 +436,13 @@
 
   /* type of card */
   .reduce {
-    background-color: #ff00001e;
-    border-color: #52bbe707;
+    background-color: var(--reduce);
+    border-color: var(--secondary);
   }
 
   .improve {
-    background-color: #52bbe707;
-    border-color: #ff00001e;
+    background-color: var(--improve);
+    border-color: var(--primary);
   }
 
   @media screen and (max-width: 1000px) {
@@ -429,14 +451,14 @@
       gap: 2rem;
     }
     .card {
-        width: 100%;
+      width: 100%;
     }
   }
+
   @media screen and (max-width: 717px) {
     .app {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
-  
   }
 </style>
