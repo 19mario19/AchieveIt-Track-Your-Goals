@@ -349,7 +349,6 @@
 
   .card {
 
-    min-width: 200px;
 
 
     display: flex;
@@ -428,6 +427,9 @@
     .app {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .card {
+        width: 100%;
     }
   }
 </style>
