@@ -1,41 +1,43 @@
-import { writable } from "svelte/store";
+import { writable } from "svelte/store"
 import {
   Status,
   type Difficulty,
   type ID,
   type Occurrence,
   type Event,
-} from "$lib/types";
+  EventType,
+} from "$lib/types"
 
 // Initialize writable store for events
-const events = writable<Event[]>([]);
-let length = 0;
+const events = writable<Event[]>([])
+let length = 0
 
 // Subscribe to events store to update length variable
 events.subscribe((v) => {
-  length = v.length;
-});
+  length = v.length
+})
 
 class CEvent {
-  private id?: ID | undefined;
-  private name: string;
-  private difficulty: Difficulty;
-
+  private id?: ID | undefined
+  private name: string
+  private difficulty: Difficulty
+  private type: EventType
   /**
    * Creates an instance of CEvent.
    * @param {string} name - The name of the event.
    * @param {Difficulty} difficulty - The difficulty of the event.
    */
-  constructor(name: string, difficulty: Difficulty) {
-    this.name = name;
-    this.difficulty = difficulty;
-    this.id = length;
+  constructor(name: string, difficulty: Difficulty, type: EventType) {
+    this.name = name
+    this.difficulty = difficulty
+    this.id = length
+    this.type = type
 
     // initial state of the object
     events.update((v) => [
       ...v,
       { ...this, id: length, occurrence: [], streak: 0 },
-    ]);
+    ])
   }
 
   /**
@@ -43,7 +45,7 @@ class CEvent {
    * @returns {ID | undefined} The ID of the event.
    */
   get getId() {
-    return this.id;
+    return this.id
   }
 
   /**
@@ -65,9 +67,9 @@ class CEvent {
             }
           : el,
       ),
-    );
+    )
     // updates the data
-    CEvent.count(id);
+    CEvent.count(id)
   }
 
   /**
@@ -76,10 +78,10 @@ class CEvent {
    * @returns {[number, number, number, number]} An array containing wins, loses, length, and streak.
    */
   private static count(id: ID) {
-    let wins = 0;
-    let loses = 0;
-    let length = 0;
-    let streak = 0;
+    let wins = 0
+    let loses = 0
+    let length = 0
+    let streak = 0
 
     events.subscribe((v) => {
       v.forEach((el) => {
@@ -90,25 +92,23 @@ class CEvent {
                 element.status === Status.Win ||
                 element.status === Status.Lose
               ) {
-                length++;
+                length++
               }
               if (element.status === Status.Win) {
-                streak++;
+                streak++
               } else {
-                streak = 0;
+                streak = 0
               }
-              return element.status === Status.Win ? wins++ : loses++;
-            });
+              return element.status === Status.Win ? wins++ : loses++
+            })
           }
         }
-      });
-    });
+      })
+    })
 
-    events.update((v) =>
-      v.map((el) => (el.id === id ? { ...el, streak } : el))
-    );
-    return [wins, loses, length, streak];
+    events.update((v) => v.map((el) => (el.id === id ? { ...el, streak } : el)))
+    return [wins, loses, length, streak]
   }
 }
 
-export { CEvent, events };
+export { CEvent, events }

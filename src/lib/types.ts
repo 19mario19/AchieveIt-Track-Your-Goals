@@ -4,9 +4,9 @@ enum Status {
 }
 
 enum Difficulty {
-  Easy = "Easy",
-  Medium = "Medium",
-  Hard = "Hard",
+  Simple = "Simple",
+  Moderate = "Moderate",
+  Challenging = "Challenging",
 }
 
 type ID = number | string
@@ -17,8 +17,14 @@ type Occurrence = {
   status: Status
 }
 
+enum EventType {
+  Improve = "Improve",
+  Reduce = "Reduce",
+}
+
 type Event = {
   id?: ID
+  type: EventType
   name: string
   difficulty: Difficulty
   streak?: number
@@ -26,4 +32,4 @@ type Event = {
 }
 
 export type { Event, ID, Occurrence }
-export { Status, Difficulty }
+export { Status, Difficulty, EventType }
