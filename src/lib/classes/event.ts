@@ -15,6 +15,7 @@ let length = 0
 // Subscribe to events store to update length variable
 events.subscribe((v) => {
   length = v.length
+  console.log(v)
 })
 
 class CEvent {
